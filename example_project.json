@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "name": "Portal Frame Demo",
+  "units": "SI",
+  "nodes": [
+    {
+      "id": "N1",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    {
+      "id": "N2",
+      "x": 4.0,
+      "y": 0.0,
+      "z": 0.0
+    },
+    {
+      "id": "N3",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 3.0
+    },
+    {
+      "id": "N4",
+      "x": 4.0,
+      "y": 0.0,
+      "z": 3.0
+    }
+  ],
+  "members": [
+    {
+      "id": "M1",
+      "start_node": "N1",
+      "end_node": "N3",
+      "material_id": "C30",
+      "section_id": "S400",
+      "orientation": null,
+      "releases": {
+        "start": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "end": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "id": "M2",
+      "start_node": "N2",
+      "end_node": "N4",
+      "material_id": "C30",
+      "section_id": "S400",
+      "orientation": null,
+      "releases": {
+        "start": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "end": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "id": "M3",
+      "start_node": "N3",
+      "end_node": "N4",
+      "material_id": "C30",
+      "section_id": "S400",
+      "orientation": null,
+      "releases": {
+        "start": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "end": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      }
+    }
+  ],
+  "materials": [
+    {
+      "id": "C30",
+      "name": "Concrete C30",
+      "type": "concrete",
+      "E": 30000000000.0,
+      "nu": 0.2,
+      "density": 2500.0
+    }
+  ],
+  "sections": [
+    {
+      "id": "S400",
+      "name": "400 x 400 mm",
+      "A": 0.16,
+      "Iy": 0.0021333333333333334,
+      "Iz": 0.0021333333333333334,
+      "J": 0.0032
+    }
+  ],
+  "supports": [
+    {
+      "node_id": "N1",
+      "UX": true,
+      "UY": true,
+      "UZ": true,
+      "RX": true,
+      "RY": true,
+      "RZ": true
+    },
+    {
+      "node_id": "N2",
+      "UX": true,
+      "UY": true,
+      "UZ": true,
+      "RX": true,
+      "RY": true,
+      "RZ": true
+    }
+  ],
+  "nodal_loads": [
+    {
+      "id": "L1",
+      "load_case_id": "LC1",
+      "node_id": "N3",
+      "FX": 0.0,
+      "FY": 0.0,
+      "FZ": -10000.0,
+      "MX": 0.0,
+      "MY": 0.0,
+      "MZ": 0.0
+    },
+    {
+      "id": "L2",
+      "load_case_id": "LC1",
+      "node_id": "N4",
+      "FX": 0.0,
+      "FY": 0.0,
+      "FZ": -10000.0,
+      "MX": 0.0,
+      "MY": 0.0,
+      "MZ": 0.0
+    }
+  ],
+  "member_uniform_loads": [],
+  "member_point_loads": [],
+  "member_moment_loads": [],
+  "load_cases": [
+    {
+      "id": "LC1",
+      "name": "Gravity",
+      "type": "dead"
+    }
+  ],
+  "combinations": [
+    {
+      "id": "COMB1",
+      "name": "1.0D",
+      "factors": [
+        {
+          "load_case_id": "LC1",
+          "factor": 1.0
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "tolerance": 1e-09,
+    "max_condition_estimate": 100000000000000.0
+  }
+}
